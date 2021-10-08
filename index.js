@@ -240,10 +240,29 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
+function get20s(array) {
   /*Your Code Here*/
+  let mytempArr = [...array] // make a copy
+  let newArray = [];
+  // let temp = [];
+  for (let i = 0; i<mytempArr.length; i++) {
+    // console.log(mytempArr[i]);
+
+    if (mytempArr[i].years) {
+      const artistYearsArr = mytempArr[i].years.split("-");
+
+      const year1 = parseInt(artistYearsArr[0].trim());
+      const year2 = parseInt(artistYearsArr[1].trim());
+
+      if (year1 >= 1900 && year2 <= 2000) {
+        newArray.push(array[i].name);
+      } 
+    }
+  }
+  return newArray;
 }
 
+// console.log(get20s(artists));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
 1. Receive an array
@@ -259,7 +278,7 @@ function removeArtist(array, number) {
   return array.length;
 }
 
-console.log(artists.length);
+// console.log(artists.length);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
 1. Receive an array
@@ -276,9 +295,16 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(array, id, name, years, genre, nationality, bio) {
+function addArtist(array) {
   /*Your Code Here*/
-  array.push({ id, name, years, genre, nationality, bio });
+  array.push({
+    id: 20,
+    name: "Your Name Here",
+    years: "Your Birth Year - current day",
+    genre: "Web Design",
+    nationality: "Your Nationality Here",
+    bio: "Add 1-2 sentences",
+  });
   return array;
 }
 
@@ -299,7 +325,6 @@ function lotsOfArt(array) {
   }
   return artistName;
 }
-console.log(lotsOfArt("name"));
 /* ***** END OF TASKS ***** */
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
