@@ -207,9 +207,12 @@ button:hover {
 
 /*media queries at 500px*/
 @media (max-width: 500px) {
+  nav {
+    width: 40%;
+  }
   nav a {
+    /* border: 1px solid red; */
     font-size: 1.5rem;
-    padding: 0% 3%;
   }
   nav span {
     margin-top: 3%;
@@ -230,7 +233,7 @@ button:hover {
   button {
     font-size: 1.4rem;
     border-radius: 1px;
-    padding: 1% 4%;
+    padding: 1.5% 5%;
   }
   .title-container hr {
     width: 100%;
@@ -247,6 +250,7 @@ button:hover {
   .artists-container img {
     width: 60%;
     height: 200px;
+    margin-bottom: 3%;
   }
   .artist {
     /* border: 1px solid orange; */
