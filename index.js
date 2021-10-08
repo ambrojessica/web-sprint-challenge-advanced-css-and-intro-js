@@ -255,12 +255,7 @@ For example, if removeArtist is invoked with the artists array and the number 0,
 
 function removeArtist(array, number) {
   /*Your Code Here*/
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === number) {
-      array.splice(i, 1);
-    }
-  }
-
+  array.splice(number, 1);
   return array.length;
 }
 
@@ -281,8 +276,10 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
+function addArtist(array, id, name, years, genre, nationality, bio) {
   /*Your Code Here*/
+  array.push({ id, name, years, genre, nationality, bio });
+  return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -292,10 +289,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
+function lotsOfArt(array) {
   /*Your Code Here*/
+  const artistName = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]["paintings"] > 100) {
+      artistName.push(array[i]["name"]);
+    }
+  }
+  return artistName;
 }
-
+console.log(lotsOfArt("name"));
 /* ***** END OF TASKS ***** */
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑*/
